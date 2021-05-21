@@ -1,0 +1,77 @@
+@use 'variables.scss' as *;
+.container{
+    display: flex;
+    margin-top: 10vh;
+    height: 350px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+#oscuro{
+    position: absolute;
+    top: 0;
+    left: 10px;
+    i{
+        font-size: 20px;
+    }
+}
+img{
+    height: 100%;
+    width: 80px;
+    margin-right: -2px;
+}
+form{
+    height: 100%;
+    background-color: var(--base);
+    width: 400px;
+    border-radius: 0px 20px 20px 0px;
+}
+body{
+    background-image: url(img/sudadera_fondo.jpg);
+    background-size: 380px;
+}
+h1{
+    color: var(--texto);
+}
+li{
+    margin-top: 10px;
+}
+label{
+    color: var(--texto);font-size: 18px;
+}
+.flex-outer{
+    display: flex;flex-wrap: wrap;list-style: none;
+}
+#first{
+    width: 215px;
+}
+#last{
+    width: 215px;
+}
+#first-name{
+    width: 200px;margin: 3px;
+}
+#password{
+    width: 300px;margin: 3px;
+}
+.bot{
+    background-color: var(--nav);width: 150px;height:40px;color: var(--texto);border-radius: 20px;margin-top: 25px;
+}
+.bot:hover{
+    background-color: brown;
+}
+.registro{
+    padding-top: 12px;
+    background-color: var(--base);
+    text-align: center;
+    width: 18%;
+    height: 50px;
+    margin: auto;
+    border: 1px solid var(--texto);
+    a{
+        text-decoration: none;
+        color: var(--texto);
+    }
+}
+.registro:hover{
+    background-color: brown;
+}

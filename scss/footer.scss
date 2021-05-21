@@ -1,0 +1,43 @@
+@use 'variables.scss' as *;
+.footer{
+    grid-column: 1/2;
+    grid-row: 3/4;
+    color: var(--texto);
+    background-color: var(--nav);
+    border: 1px solid var(--base);
+    height: 200px;
+}
+.grupo{
+    display: flex;
+}
+.colum{
+    text-align: center;
+    width: 33.3%;
+    height: 120px;
+}
+.colum h3{
+    margin-bottom: 0px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.colum div{
+    margin-top: 3px;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.fin{
+    width: 100%;
+}
+.fin div{
+    font-size: 16px;
+    text-align: center;
+}
+.fin div span{
+    position: absolute;
+    right: 10px;
+    font-size: 16px;
+}
+@media (max-width: 767px) {
+    .fin{
+        padding-top: 10px;
+    }
+}

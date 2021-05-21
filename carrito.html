@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <header id="headerCarrito">
+        <h1 id="usuario"></h1>
+    </header><br><br>
+
+    <!-- Para diferenciar con el value si son de hombre o de mujer los productos -->
+    <input type="text" id="hombre" value="0" hidden="true">
+
+    <div class="container containerCarrito">
+        <div class="row">
+            <!-- Elementos generados a partir del JSON -->
+            <main id="items" class="row" hidden=true></main>
+            <!-- Carrito -->
+            <aside class="col-12">
+                <!-- Elementos del carrito -->
+                <ul id="carrito" class="list-group"></ul>
+                <hr>
+                <!-- Precio total -->
+                <p class="text-right">Total: <span id="total"></span>&euro;</p>
+                <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+                <button id="boton-continuar" class="btn btn-primary">Continuar</button>
+            </aside>
+        </div>
+    </div>
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Pedido Realizado con Exito</h4>
+        <h6>Muchas gracias por realizar su pedido en Prior.</h6>
+        <hr>
+        <h6 class="mb-0">Le llegara a su correo un email con la confirmacion de su pedido</h6>
+      </div>
+    <script src="js/insertar.js"></script>
+    <script src="js/carrito.js"></script>
+    
+</body>
+</html>

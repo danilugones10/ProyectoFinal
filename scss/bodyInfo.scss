@@ -1,0 +1,36 @@
+.card_width{
+    min-width: 400px;
+    max-width: 33%;
+}
+.main{
+    p{
+        color: var(--texto);
+    }
+    h5{
+        color: var(--texto);
+    }
+    .entrega{
+        width: 70%;
+        margin: auto;
+        p{
+            padding: 10px;
+            border-radius: 20px;
+            border: 2px solid;
+        }
+    }
+    .pagos{
+        width: 30%;
+        min-width: 300px;
+        margin: auto;
+        border-radius: 20px;
+        border: 2px solid;
+        color: var(--texto);
+        background-color: var(--base);
+        ul{
+            list-style: none;
+            li{
+                padding: 10px;
+            }
+        }
+    }
+}

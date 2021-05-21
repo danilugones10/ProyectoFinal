@@ -1,0 +1,18 @@
+$color__claro:#ded2cf;
+$color__oscuro:#464e5d;
+$color__clarito:#ffffff;
+$color__oscurito:#000000;
+$texto__claro:#000000;
+$texto__oscuro:#ffffff;
+
+:root{
+    --base: #{$color__claro};
+    --texto: #{$texto__claro};
+    --nav: #{$color__clarito};
+}
+
+.modoOscuro{
+    --base: #{$color__oscuro};
+    --texto: #{$texto__oscuro};
+    --nav: #{$color__oscurito};
+}

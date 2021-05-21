@@ -1,0 +1,46 @@
+#usuario{
+    background-color: white;
+    border: 1px solid;
+}
+.containerCarrito{
+    width: 80%;
+    margin: auto;
+    .text-right{
+        padding: 5px;
+        background-color: white;
+        border: 1px solid;
+    }
+}
+.list-group{
+  width: 70%;
+  margin: auto;
+  min-width: 300px;
+  li{
+    margin: 5px;
+    padding: 10px;
+    p{
+        background-color: white;
+    }
+    img{
+        width: 150px;
+        border: 1px solid;
+    }
+  }  
+}
+#boton-vaciar{
+    margin-bottom: 10px;
+}
+#boton-continuar{
+    float: right;
+    margin-bottom: 10px;
+}
+.alert-success{
+    display: none;
+    width: 80%;
+    margin: auto;
+}
+@media (max-width: 767px) {
+    .containerCarrito{
+        margin-top: -280px;
+    }
+}

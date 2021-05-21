@@ -1,0 +1,45 @@
+h1{
+    background-color: var(--base);
+    color: var(--texto);
+    padding: 10px;
+    text-align: center;
+}
+p{
+    color: var(--texto);
+    background-color: var(--base);
+}
+.cuadro{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.cajita{
+    color: var(--texto);
+    background-color: var(--base);
+    min-width: 450px;
+    height: 300px;
+    margin-bottom: 10px;
+}
+.accordion{
+    .card{
+    color: var(--texto);
+    background-color: var(--base);
+        .card-body{
+            background-color: rgba($color: #000000, $alpha: 0.3);
+        }
+        button{
+            color: var(--texto);
+        }
+    }
+}
+
+.contacto-form{
+    height: 350px;
+    margin: auto;
+    width: 75%;
+    fieldset{
+        border: 1px solid;
+    }
+    color: var(--texto);
+    background-color: var(--base);
+}

@@ -1,0 +1,52 @@
+.tabla{
+    text-align: center;
+    width: 90%;
+    background-color: var(--base);
+    margin: auto;
+    margin-bottom: 10px;
+}
+th{
+    color: var(--texto);
+}
+td{
+    color: var(--texto);
+}
+#cajilla{
+    margin: auto;
+    width: 95vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.sudaderasHombre{
+    text-align: center;
+    width: 300px;
+    background-color: var(--base);
+    border: 1px solid var(--texto);
+    margin: 15px;
+    padding: 5px;
+}
+.formulario_precio{
+    margin: 10px;
+    padding: 10px;
+}
+.filtrar{
+    background-color: var(--base);
+    color: var(--texto);
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    h5{
+        margin-top: 8px;
+    }
+    input{
+        height: 25px;
+        margin-top: 13px;
+        margin-right: 5px;
+        margin-left: 3px;
+    }
+    button{
+        height: 50px;
+    }
+}

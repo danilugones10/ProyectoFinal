@@ -1,0 +1,56 @@
+@use 'variables.scss' as *;
+@use 'header.scss' as *;
+@use 'body.scss' as *;
+@use 'footer.scss' as *;
+@use 'bodyInfo.scss' as *;
+@use 'bodyContacto.scss' as *;
+@use 'bodyHombre.scss' as *;
+@use 'bodyMujer.scss' as *;
+@use 'carrito.scss' as *;
+@use 'producto.scss' as *;
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    h1{
+        color: var(--texto);
+    }
+    h5{
+        color: var(--texto);
+    }
+    p{
+        color: var(--texto);
+    }
+}
+body{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 75px auto 200px;  
+    background-image: url(img/sudadera_fondo.jpg);
+}
+#oscuro{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.color__claro{
+    background-color: var(--base);
+    color: var(--texto);
+}
+.formulario_precio{
+    margin-top: 30px;
+    display: none;
+    button{
+        margin: 5px;
+    }
+}
+
+@media (max-width: 767px) {
+    body{
+        grid-template-rows: 350px auto 200px;  
+    }
+    .main{
+        margin-top: -250px;
+    }
+}

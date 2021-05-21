@@ -1,0 +1,41 @@
+:root {
+  --base: #ded2cf;
+  --texto: #000000;
+  --nav: #ffffff;
+}
+
+.modoOscuro {
+  --base: #464e5d;
+  --texto: #ffffff;
+  --nav: #000000;
+}
+
+body {
+  background-image: url(img/sudadera_fondo.jpg);
+  background-size: 380px;
+}
+
+#oscuro {
+  position: absolute;
+  top: 0;
+  left: 10px;
+}
+#oscuro i {
+  font-size: 20px;
+}
+
+form {
+  background-color: var(--base);
+  width: 80%;
+  margin: auto;
+  margin-top: 100px;
+  padding: 10px;
+  border-radius: 2%;
+  margin-bottom: 50px;
+}
+
+label {
+  color: var(--texto);
+}
+
+/*# sourceMappingURL=style_registro.css.map */
