@@ -21,13 +21,13 @@ a0.appendChild(img0);
 li0.appendChild(a0);
 fragment.appendChild(li0);
 
-const li=document.createElement('li');
-li.className="menu__item";
-const a=document.createElement('a');
-a.href="productosHombre.html";
-a.textContent="Hombre";
-li.appendChild(a)
-fragment.appendChild(li);
+const li1=document.createElement('li');
+li1.className="menu__item";
+const a1=document.createElement('a');
+a1.href="productosHombre.html";
+a1.textContent="Hombre";
+li1.appendChild(a1);
+fragment.appendChild(li1);
 
 const li2=document.createElement('li');
 li2.className="menu__item";
@@ -53,10 +53,9 @@ a4.textContent="Info";
 li4.appendChild(a4)
 fragment.appendChild(li4);
 
-const li7=document.createElement('li');
-li7.id="sesion";
-// li7.textContent=0;
-fragment.appendChild(li7);
+const li5=document.createElement('li');
+li5.id="sesion";
+fragment.appendChild(li5);
 
 const li6=document.createElement('li');
 const button6=document.createElement('button');
@@ -68,24 +67,24 @@ button6.appendChild(a6);
 li6.appendChild(button6);
 fragment.appendChild(button6);
 
-const li8=document.createElement('li');
-const button8=document.createElement('button');
-button8.className="cierre";
-const a8=document.createElement('a');
-a8.href="index.html";
-a8.textContent="Cerrar Sesion";
-button8.appendChild(a8);
-li8.appendChild(button8);
-fragment.appendChild(button8);
+const li7=document.createElement('li');
+const button7=document.createElement('button');
+button7.className="cierre";
+const a7=document.createElement('a');
+a7.href="index.html";
+a7.textContent="Cerrar Sesion";
+button7.appendChild(a7);
+li7.appendChild(button7);
+fragment.appendChild(button7);
 
-const li9=document.createElement('div');
-const a9=document.createElement('a');
-a9.innerHTML='<i class="bi bi-bag"></i>';
-li9.className="carrito";
-li9.id="carrito";
-a9.href="carrito.html";
-li9.appendChild(a9);
-fragment.appendChild(li9);
+const li8=document.createElement('div');
+const a8=document.createElement('a');
+a8.innerHTML='<i class="bi bi-bag"></i>';
+li8.className="carrito";
+li8.id="carrito";
+a8.href="carrito.html";
+li8.appendChild(a8);
+fragment.appendChild(li8);
 
 const hamb=document.createElement('label');
 hamb.innerHTML="<span>&#9776;</span>";
@@ -135,82 +134,77 @@ function getCookie(cname) {
     return "";
 }
 function deleteCookie(name) {
-        setCookie(name, "", {
-          'max-age': -1
-        })
-    }
-
-    hamburguesa.addEventListener('click', ()=>{
-        
-        if(window.innerWidth<767){
-                
-            if( menu.style.height==="75px"){
-                header.style.height="100%"
-                menu.style.height="100%";
-                main.style.marginTop="0px";
-                li0.style.visibility="visible"
-                li.style.visibility="visible";
-                li2.style.visibility="visible";
-                li3.style.visibility="visible";
-                li4.style.visibility="visible";
-            }
-            else{
-                header.style.height="75px"
-                menu.style.height="75px";
-                main.style.marginTop="-250px";
-                li0.style.visibility="hidden"
-                li.style.visibility="hidden";
-                li2.style.visibility="hidden";
-                li3.style.visibility="hidden";
-                li4.style.visibility="hidden";
-                
-            }
-        }
+    setCookie(name, "", {
+        'max-age': -1
     })
+}
 
-    window.addEventListener("resize",() => {
-        if (this.window.innerWidth>767) {
+hamburguesa.addEventListener('click', ()=>{
+    if(window.innerWidth<767){
+        if( menu.style.height==="75px"){
+            header.style.height="100%"
+            menu.style.height="100%";
             main.style.marginTop="0px";
             li0.style.visibility="visible"
-            li.style.visibility="visible";
+            li1.style.visibility="visible";
             li2.style.visibility="visible";
             li3.style.visibility="visible";
             li4.style.visibility="visible";
-        }   
+        }
         else{
-            header.style.height="75px";
+            header.style.height="75px"
+            menu.style.height="75px";
             main.style.marginTop="-250px";
             li0.style.visibility="hidden"
-            li.style.visibility="hidden";
+            li1.style.visibility="hidden";
             li2.style.visibility="hidden";
             li3.style.visibility="hidden";
-            li4.style.visibility="hidden";
+            li4.style.visibility="hidden";   
         }
-     })
-
-    
-
-    function InicioSesion() {
-        if(getCookie("usuario")==""){
-            button8.style.display="none"
-            button6.style.display="block"
-            a9.style.display="none"
-        }
-        else if(getCookie("usuario")=="root"){
-            button8.style.display="block"
-            button6.style.display="none"
-            a9.style.display="none"
-        }
-        else{
-            button8.style.display="block"
-            button6.style.display="none"
-            a9.style.display="block"
-        }  
     }
-    InicioSesion()
+})
 
-    button8.addEventListener('click', ()=>{
-        deleteCookie('usuario');
-        deleteCookie('contraseña');
-        deleteCookie('rol');
-    })
+window.addEventListener("resize",() => {
+    if (this.window.innerWidth>767) {
+        main.style.marginTop="0px";
+        li0.style.visibility="visible"
+        li1.style.visibility="visible";
+        li2.style.visibility="visible";
+        li3.style.visibility="visible";
+        li4.style.visibility="visible";
+    }   
+    else{
+        header.style.height="75px";
+        main.style.marginTop="-250px";
+        li0.style.visibility="hidden"
+        li1.style.visibility="hidden";
+        li2.style.visibility="hidden";
+        li3.style.visibility="hidden";
+        li4.style.visibility="hidden";
+    }
+})  
+
+function InicioSesion() {
+    if(getCookie("usuario")==""){
+        button7.style.display="none"
+        button6.style.display="block"
+        a8.style.display="none"
+    }
+    else if(getCookie("usuario")=="root"){
+        button7.style.display="block"
+        button6.style.display="none"
+        a8.style.display="none"
+    }
+    else{
+        button7.style.display="block"
+        button6.style.display="none"
+        a8.style.display="block"
+    }
+}
+InicioSesion()
+
+button7.addEventListener('click', ()=>{
+    deleteCookie('usuario');
+    deleteCookie('contraseña');
+    deleteCookie('rol');
+})

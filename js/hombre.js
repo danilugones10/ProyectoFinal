@@ -42,6 +42,7 @@ fetch('http://localhost:8080/sudaderas-tomcat/producto/1')
             editar.id=`${data[i].id_producto}`;editar.className="btn btn-success";editar.href="#INICIO"
             editar.textContent="Editar"
             borrar.addEventListener('click', ()=>{
+                // Este fecth borra el producto por esa id al hacer click
                 fetch('http://localhost:8080/sudaderas-tomcat/producto/borrar/'+borrar.id)
                 .then(res => res.json())
                 .then(data => {
@@ -51,6 +52,7 @@ fetch('http://localhost:8080/sudaderas-tomcat/producto/1')
                 .catch(err=> console.log(`error: ${err.status}`))
             })
             editar.addEventListener('click', ()=>{
+                // Este fecth coge el producto por esa id al hacer click
                 fetch('http://localhost:8080/sudaderas-tomcat/product/'+editar.id)
                 .then(res => res.json())
                 .then(data => {
@@ -91,6 +93,7 @@ fetch('http://localhost:8080/sudaderas-tomcat/producto/1')
                             }
                         }
                         console.log(prod)
+                            // Este fetch edita el precio cuando lo cambiamos
                             fetch('http://localhost:8080/sudaderas-tomcat/aniadir', {
                                 method: 'POST',
                                 headers: {

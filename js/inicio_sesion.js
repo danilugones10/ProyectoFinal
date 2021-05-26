@@ -1,8 +1,6 @@
 const nombre_usuario=document.getElementById('first-name');
 const password=document.getElementById('password');
 const enviando=document.getElementById('enviando');
-// const sesion=document.getElementById('sesion');
-// console.log(sesion)
 
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
@@ -10,6 +8,7 @@ function setCookie(cname, cvalue, exdays) {
     var expires = "expires="+ d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
+
 function deleteCookie(name) {
     setCookie(name, "", {
       'max-age': -1
@@ -17,6 +16,7 @@ function deleteCookie(name) {
 }
 
 function login() {
+    // El fetch devuelve todos los usuarios que hay
     fetch('http://localhost:8080/usuarios-tomcat/usuario')
     .then(res => res.json())
     .then(data => {

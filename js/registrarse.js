@@ -40,6 +40,7 @@ email.addEventListener('change', (e) => {
     const regEx = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
     if (regEx.test(email.value)==true) {
         let coincide=0
+        // Este fetch devulve los usuarios que ya hay
         fetch('http://localhost:8080/usuarios-tomcat/usuario')
         .then(res => res.json())
         .then(data => {
@@ -74,6 +75,7 @@ apellido.addEventListener('change', (e) => {
 usuario.addEventListener('change', (e) => {
     if((e.target.value.trim().length > 2)&&(e.target.value.trim().length < 20)){
         let coincide=0
+        // Este fetch devulve los usuarios que ya hay
         fetch('http://localhost:8080/usuarios-tomcat/usuario')
         .then(res => res.json())
         .then(data => {
@@ -121,7 +123,7 @@ const validateForm = () => {
             edad: edad.value, 
             rol: rol.value
         };
-    
+            // Es para añadir un usuario
             fetch('http://localhost:8080/usuarios-tomcat/user', {
                 method: 'POST',
                 headers: {

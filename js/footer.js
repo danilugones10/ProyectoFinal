@@ -1,6 +1,7 @@
 const foot=document.querySelector('.footer')
 const divGrupo=document.createElement('div')
 divGrupo.className="grupo"
+
 //Columna1
 const divColumn1=document.createElement('div')
 divColumn1.className="colum"
@@ -19,6 +20,7 @@ const img1_3=document.createElement('img')
 img1_3.src="css/img/Twiter.PNG";img1_3.width=15
 div1_3.textContent="_prior";div1_3.appendChild(img1_3)
 divColumn1.appendChild(h31);divColumn1.appendChild(div1_1);divColumn1.appendChild(div1_2);divColumn1.appendChild(div1_3);
+
 //Columna2
 const divColumn2=document.createElement('div')
 divColumn2.className="colum"
@@ -31,9 +33,9 @@ div2_2.textContent="Tarjeta Regalo"
 const div2_3=document.createElement('div')
 div2_3.textContent="Black Friday"
 divColumn2.appendChild(h32);divColumn2.appendChild(div2_1);divColumn2.appendChild(div2_2);divColumn2.appendChild(div2_3);
+
 //Columna3
 const br=document.createElement('br')
-
 const divColumn3=document.createElement('div')
 divColumn3.className="colum"
 const h33=document.createElement('h3')
@@ -51,7 +53,6 @@ divFin.className="fin"
 const divFinal=document.createElement('div')
 divFinal.innerHTML="&copy; 2021 Prior <span>Privacidad|Accesibilidad</span> ";
 divFin.appendChild(divFinal)
-
 
 foot.appendChild(divGrupo);foot.appendChild(br);
 foot.appendChild(divFin)

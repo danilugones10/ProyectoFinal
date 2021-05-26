@@ -1,60 +1,61 @@
-    const baseDeDatos=[];
-    let carrito = [];
-    let total = 0;
-    let hombre=0;
-    let len=0;
-    const sexo=document.getElementById('hombre');
-    const DOMitems = document.querySelector('#items');
-    const DOMcarrito = document.querySelector('#carrito');
-    const DOMtotal = document.querySelector('#total');
-    const DOMbotonVaciar = document.getElementById('boton-vaciar');
-    const ir=document.getElementById('ir')
-    const miLocalStorage = window.localStorage;
-    const formulario_precio=document.querySelector('.formulario_precio');
-    const nombreProducto=document.getElementById('nombreProducto');
-    const euro=document.querySelector('.form-control');
-    const fragmen=document.createDocumentFragment();
-    const continuar=document.getElementById('boton-continuar');
-    const store=window.localStorage;
-    let vacio=[]
-    let usu=getCookie('usuario');
+const baseDeDatos=[];
+let carrito = [];
+let total = 0;
+let hombre=0;
+let len=0;
+const sexo=document.getElementById('hombre');
+const DOMitems = document.querySelector('#items');
+const DOMcarrito = document.querySelector('#carrito');
+const DOMtotal = document.querySelector('#total');
+const DOMbotonVaciar = document.getElementById('boton-vaciar');
+const ir=document.getElementById('ir')
+const miLocalStorage = window.localStorage;
+const formulario_precio=document.querySelector('.formulario_precio');
+const nombreProducto=document.getElementById('nombreProducto');
+const euro=document.querySelector('.form-control');
+const fragmen=document.createDocumentFragment();
+const continuar=document.getElementById('boton-continuar');
+const store=window.localStorage;
+let vacio=[]
+let usu=getCookie('usuario');
 
-    if (sexo.value==0) {
-        hombre=0;
-    }
-    else{
-        hombre=1;
-    }
+if (sexo.value==0) {
+    hombre=0;
+}
+else{
+    hombre=1;
+}
 
-    function getCookie(cname) {
-        let decodedCookie = decodeURIComponent(document.cookie);
-        // En decodedCookie tengo las cookies en formato cadena
-        // console.log(decodedCookie);
-        //En ca tengo todas las cookies como array
-        let ca = decodedCookie.split(';');
-        // console.log(ca);
-        // recorro el array
-        for(let i = 0; i <ca.length; i++) {
-          // quito espacios por si los hubiera
-          let c = ca[i].trim();
-          // busco el igual, antes de él tengo el nombre y después su valor
-          let igual=c.search("=")
-          // Extraigo el nombre (desde el principio al igual)
-          let nombre=c.substring(0, igual)
-          // console.log(nombre)
-          // Si es la cookie que busco
-          if (nombre==cname){
-            // extraigo el valor (del igual al final)
-            let cookie=c.substring(igual+1,c.length)
-            return cookie
-            // no busco mas, salgo del for
-            break;
-          }
+function getCookie(cname) {
+    let decodedCookie = decodeURIComponent(document.cookie);
+    // En decodedCookie tengo las cookies en formato cadena
+    // console.log(decodedCookie);
+    //En ca tengo todas las cookies como array
+    let ca = decodedCookie.split(';');
+    // console.log(ca);
+    // recorro el array
+    for(let i = 0; i <ca.length; i++) {
+        // quito espacios por si los hubiera
+        let c = ca[i].trim();
+        // busco el igual, antes de él tengo el nombre y después su valor
+        let igual=c.search("=")
+        // Extraigo el nombre (desde el principio al igual)
+        let nombre=c.substring(0, igual)
+        // console.log(nombre)
+        // Si es la cookie que busco
+        if (nombre==cname){
+        // extraigo el valor (del igual al final)
+        let cookie=c.substring(igual+1,c.length)
+        return cookie
+        // no busco mas, salgo del for
+        break;
         }
-        // si no la encuentro devuelvo una cadana vacía
-        return "";
     }
+    // si no la encuentro devuelvo una cadana vacía
+    return "";
+}
 
+// Hago un fetch para coger todos los productos
 fetch('http://localhost:8080/sudaderas-tomcat/productos')
 .then(res => res.json())
 .then(data => {
@@ -65,6 +66,8 @@ fetch('http://localhost:8080/sudaderas-tomcat/productos')
         
         function renderizarProductos(){
             for(let i=0; i<data.length; i++){
+                
+            // Si estoy en la pagina de hombres saca los productos masculinos
             if (hombre==0) {
             if ((data[i].categoria.id_categoria==1)) {
             // Estructura
@@ -101,6 +104,7 @@ fetch('http://localhost:8080/sudaderas-tomcat/productos')
             editar.textContent="Editar"
 
             borrar.addEventListener('click', ()=>{
+                // Borra el producto con esa id al hacer click
                 fetch('http://localhost:8080/sudaderas-tomcat/producto/borrar/'+borrar.id)
                 .then(res => res.json())
                 .then(data => {
@@ -109,6 +113,7 @@ fetch('http://localhost:8080/sudaderas-tomcat/productos')
                 .catch(err=> console.log(`error: ${err.status}`))
             })
             editar.addEventListener('click', ()=>{
+                // Coge el producto por esa id al hacer click con sus datos
                 fetch('http://localhost:8080/sudaderas-tomcat/product/'+editar.id)
                 .then(res => res.json())
                 .then(data => {
@@ -147,6 +152,7 @@ fetch('http://localhost:8080/sudaderas-tomcat/productos')
                                 nombre_categoria: data.categoria.nombre_categoria
                             }
                         }
+                            // Añade el producto que editamos
                             fetch('http://localhost:8080/sudaderas-tomcat/aniadir', {
                                 method: 'POST',
                                 headers: {
@@ -183,7 +189,8 @@ fetch('http://localhost:8080/sudaderas-tomcat/productos')
             DOMitems.appendChild(miNodo);
             }
             }
-            // --
+
+            // Si estoy en la pagina de mujeres saca los productos femeninos
             if (hombre==1) {
                 if ((data[i].categoria.id_categoria==2)) {
                 // Estructura
@@ -220,6 +227,7 @@ fetch('http://localhost:8080/sudaderas-tomcat/productos')
                 editar.textContent="Editar"
     
                 borrar.addEventListener('click', ()=>{
+                    // Borra el producto con esa id al hacer click
                     fetch('http://localhost:8080/sudaderas-tomcat/producto/borrar/'+borrar.id)
                     .then(res => res.json())
                     .then(data => {
@@ -228,6 +236,7 @@ fetch('http://localhost:8080/sudaderas-tomcat/productos')
                     .catch(err=> console.log(`error: ${err.status}`))
                 })
                 editar.addEventListener('click', ()=>{
+                    // Coge el producto por esa id al hacer click con sus datos
                     fetch('http://localhost:8080/sudaderas-tomcat/product/'+editar.id)
                     .then(res => res.json())
                     .then(data => {
@@ -266,6 +275,7 @@ fetch('http://localhost:8080/sudaderas-tomcat/productos')
                                     nombre_categoria: data.categoria.nombre_categoria
                                 }
                             }
+                                // Añade el producto que editamos
                                 fetch('http://localhost:8080/sudaderas-tomcat/aniadir', {
                                     method: 'POST',
                                     headers: {
@@ -365,14 +375,8 @@ function renderizarCarrito() {
         DOMcarrito.appendChild(miNodo);
     });
 }
-continuar.addEventListener('click', ()=>{
-    const alert=document.querySelector('.alert-success');
-    const car=document.querySelector('.containerCarrito');
-    alert.style.display="block";
-    car.style.display="none";
-    store.setItem(getCookie('usuario'), JSON.stringify(vacio));
-})
 
+// Borrar un item del carrito
 function borrarItemCarrito(evento) {
     // Obtenemos el producto ID que hay en el boton pulsado
     const id = evento.target.dataset.item;
@@ -394,9 +398,7 @@ function borrarItemCarrito(evento) {
 
 }
 
-/**
-* Calcula el precio total teniendo en cuenta los productos repetidos
-*/
+// Calcula el precio total teniendo en cuenta los productos repetidos
 function calcularTotal() {
     // Limpiamos precio anterior
     total = 0;
@@ -412,9 +414,7 @@ function calcularTotal() {
     DOMtotal.textContent = total.toFixed(2);
 }
 
-/**
-* Varia el carrito y vuelve a dibujarlo
-*/
+// Varia el carrito y vuelve a dibujarlo
 function vaciarCarrito() {
     // Limpiamos los productos guardados
     let vacio=[]
@@ -441,7 +441,14 @@ function cargarCarritoDeLocalStorage() {
     }
 }
 
-// Eventos
+continuar.addEventListener('click', ()=>{
+    const alert=document.querySelector('.alert-success');
+    const car=document.querySelector('.containerCarrito');
+    alert.style.display="block";
+    car.style.display="none";
+    store.setItem(getCookie('usuario'), JSON.stringify(vacio));
+})
+
 DOMbotonVaciar.addEventListener('click',()=>{
     vaciarCarrito();
     location.reload();

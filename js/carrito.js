@@ -30,6 +30,7 @@ function getCookie(cname) {
     return "";
 }
 
+// Saca un h1 con el nombre del usuario que esta activo
 function change() {
   usuario.textContent="Carrito de: "+getCookie("usuario");
 }
