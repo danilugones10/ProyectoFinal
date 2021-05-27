@@ -7,14 +7,14 @@ const fragment=document.createDocumentFragment();
 
 const bot=document.createElement('div');
 bot.id="oscuro";
-bot.className=""
+bot.className="";
 bot.innerHTML='<i class="bi bi-toggle-on"></i>';
 nav.appendChild(bot);
 
 const li0=document.createElement('li');
 li0.className="menu__item";
 const a0=document.createElement('a');
-const img0=document.createElement('img')
+const img0=document.createElement('img');
 a0.href="index.html";
 img0.src="css/img/Prior.PNG";img0.style.height="27px";img0.style.border="1px solid";
 a0.appendChild(img0);
@@ -34,7 +34,7 @@ li2.className="menu__item";
 const a2=document.createElement('a');
 a2.href="productosMujer.html";
 a2.textContent="Mujer";
-li2.appendChild(a2)
+li2.appendChild(a2);
 fragment.appendChild(li2);
 
 const li3=document.createElement('li');
@@ -50,7 +50,7 @@ li4.className="menu__item";
 const a4=document.createElement('a');
 a4.href="info.html";
 a4.textContent="Info";
-li4.appendChild(a4)
+li4.appendChild(a4);
 fragment.appendChild(li4);
 
 const li5=document.createElement('li');
@@ -142,7 +142,7 @@ function deleteCookie(name) {
 hamburguesa.addEventListener('click', ()=>{
     if(window.innerWidth<767){
         if( menu.style.height==="75px"){
-            header.style.height="100%"
+            header.style.height="100%";
             menu.style.height="100%";
             main.style.marginTop="0px";
             li0.style.visibility="visible"
@@ -152,7 +152,7 @@ hamburguesa.addEventListener('click', ()=>{
             li4.style.visibility="visible";
         }
         else{
-            header.style.height="75px"
+            header.style.height="75px";
             menu.style.height="75px";
             main.style.marginTop="-250px";
             li0.style.visibility="hidden"
@@ -167,7 +167,7 @@ hamburguesa.addEventListener('click', ()=>{
 window.addEventListener("resize",() => {
     if (this.window.innerWidth>767) {
         main.style.marginTop="0px";
-        li0.style.visibility="visible"
+        li0.style.visibility="visible";
         li1.style.visibility="visible";
         li2.style.visibility="visible";
         li3.style.visibility="visible";
@@ -186,19 +186,19 @@ window.addEventListener("resize",() => {
 
 function InicioSesion() {
     if(getCookie("usuario")==""){
-        button7.style.display="none"
-        button6.style.display="block"
-        a8.style.display="none"
+        button7.style.display="none";
+        button6.style.display="block";
+        a8.style.display="none";
     }
     else if(getCookie("usuario")=="root"){
-        button7.style.display="block"
-        button6.style.display="none"
-        a8.style.display="none"
+        button7.style.display="block";
+        button6.style.display="none";
+        a8.style.display="none";
     }
     else{
-        button7.style.display="block"
-        button6.style.display="none"
-        a8.style.display="block"
+        button7.style.display="block";
+        button6.style.display="none";
+        a8.style.display="block";
     }
 }
 InicioSesion()

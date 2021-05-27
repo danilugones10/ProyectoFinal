@@ -48,7 +48,7 @@ fetch('http://localhost:8080/sudaderas-tomcat/producto/1')
                 .then(data => {
                     location.reload();
                     
-                })    
+                })
                 .catch(err=> console.log(`error: ${err.status}`))
             })
             editar.addEventListener('click', ()=>{
@@ -56,7 +56,6 @@ fetch('http://localhost:8080/sudaderas-tomcat/producto/1')
                 fetch('http://localhost:8080/sudaderas-tomcat/product/'+editar.id)
                 .then(res => res.json())
                 .then(data => {
-                    
                     prod={
                         id_producto: data.id_producto,
                         nombre_producto: data.nombre_producto,
@@ -107,7 +106,6 @@ fetch('http://localhost:8080/sudaderas-tomcat/producto/1')
                             });
                     })
                 })    
-                
                 .catch(err=> console.log(`error: ${err.status}`))
             })
             if(getCookie("rol")!=1){

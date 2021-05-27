@@ -21,7 +21,7 @@ function login() {
     .then(res => res.json())
     .then(data => {
         let valor=0;
-        let rol
+        let rol;
         console.log(data)
         
         for (let i = 0; i < data.length; i++) {

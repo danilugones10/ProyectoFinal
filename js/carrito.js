@@ -8,10 +8,10 @@ function getCookie(cname) {
     //En ca tengo todas las cookies como array
     let ca = decodedCookie.split(';');
     // console.log(ca);
-    // recorro el array 
+    // recorro el array
     for(let i = 0; i <ca.length; i++) {
       // quito espacios por si los hubiera
-      let c = ca[i].trim();      
+      let c = ca[i].trim();
       // busco el igual, antes de él tengo el nombre y después su valor
       let igual=c.search("=")
       // Extraigo el nombre (desde el principio al igual)

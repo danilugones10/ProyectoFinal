@@ -98,7 +98,6 @@ usuario.addEventListener('change', (e) => {
         .catch(err=> console.log(`error: ${err.status}`))
     }
 })
-
 edad.addEventListener('change', (e) => {
     if(e.target.value.trim().length > 0){
         formIsValidd.edad = true

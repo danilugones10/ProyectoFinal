@@ -8,7 +8,7 @@ const DOMitems = document.querySelector('#items');
 const DOMcarrito = document.querySelector('#carrito');
 const DOMtotal = document.querySelector('#total');
 const DOMbotonVaciar = document.getElementById('boton-vaciar');
-const ir=document.getElementById('ir')
+const ir=document.getElementById('ir');
 const miLocalStorage = window.localStorage;
 const formulario_precio=document.querySelector('.formulario_precio');
 const nombreProducto=document.getElementById('nombreProducto');
@@ -16,7 +16,7 @@ const euro=document.querySelector('.form-control');
 const fragmen=document.createDocumentFragment();
 const continuar=document.getElementById('boton-continuar');
 const store=window.localStorage;
-let vacio=[]
+let vacio=[];
 let usu=getCookie('usuario');
 
 if (sexo.value==0) {
@@ -312,14 +312,12 @@ fetch('http://localhost:8080/sudaderas-tomcat/productos')
                 DOMitems.appendChild(miNodo);
                 }
                 }
-        }
+            }
         }  
-        renderizarProductos();    
-        cargarCarritoDeLocalStorage();
-        renderizarCarrito();
-        calcularTotal();
-        
-        
+    renderizarProductos();    
+    cargarCarritoDeLocalStorage();
+    renderizarCarrito();
+    calcularTotal();
 })
 .catch(err=> console.log(`error: ${err.status}`))
 
