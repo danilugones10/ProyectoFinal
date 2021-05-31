@@ -504,6 +504,18 @@ td {
   color: var(--texto);
 }
 
+#busqueda {
+  margin: 5px;
+}
+
+#nombre {
+  margin-left: 5px;
+}
+
+.buscador {
+  margin: 5px;
+}
+
 #cajilla {
   margin: auto;
   width: 95vw;

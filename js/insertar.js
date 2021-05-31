@@ -1,4 +1,5 @@
 const baseDeDatos=[];
+const filtro=[];
 let carrito = [];
 let total = 0;
 let hombre=0;
@@ -12,9 +13,11 @@ const ir=document.getElementById('ir');
 const miLocalStorage = window.localStorage;
 const formulario_precio=document.querySelector('.formulario_precio');
 const nombreProducto=document.getElementById('nombreProducto');
-const euro=document.querySelector('.form-control');
+const euro=document.getElementById('precioInput');
 const fragmen=document.createDocumentFragment();
 const continuar=document.getElementById('boton-continuar');
+const nombre=document.getElementById('nombre');
+const buscador=document.querySelector('.buscador');
 const store=window.localStorage;
 let vacio=[];
 let usu=getCookie('usuario');
@@ -24,6 +27,15 @@ if (sexo.value==0) {
 }
 else{
     hombre=1;
+}
+
+function filtrando() {
+    for (let i = 0; i < filtro.length; i++) {
+        if(filtro[i].nombre_producto.includes(nombre.value)){
+            baseDeDatos.push(filtro[i])
+        }
+    } 
+    console.log(baseDeDatos)
 }
 
 function getCookie(cname) {
@@ -60,16 +72,33 @@ fetch('http://localhost:8080/sudaderas-tomcat/productos')
 .then(res => res.json())
 .then(data => {
 
-        for (let i = 0; i < data.length; i++) {
-            baseDeDatos.push(data[i])
+    for (let i = 0; i < data.length; i++) {
+            filtro.push(data[i])
+    }
+
+    filtrando()
+
+    buscador.addEventListener('click', () =>{
+        for (let i = 0; i < filtro.length; i++) {
+            baseDeDatos.pop()
         }
+        filtrando();
+        let nodos=document.querySelectorAll('.miNodo');
+        for (element of nodos) {
+            element.remove();
+        }
+        renderizarProductos();
+        cargarCarritoDeLocalStorage();
+        renderizarCarrito();
+        calcularTotal();
+    })
         
         function renderizarProductos(){
             for(let i=0; i<data.length; i++){
                 
             // Si estoy en la pagina de hombres saca los productos masculinos
             if (hombre==0) {
-            if ((data[i].categoria.id_categoria==1)) {
+            if ((baseDeDatos[i].categoria.id_categoria==1)) {
             // Estructura
             const miNodo = document.createElement('div');
             miNodo.classList.add('card', 'col-sm-12');
@@ -192,7 +221,7 @@ fetch('http://localhost:8080/sudaderas-tomcat/productos')
 
             // Si estoy en la pagina de mujeres saca los productos femeninos
             if (hombre==1) {
-                if ((data[i].categoria.id_categoria==2)) {
+                if ((baseDeDatos[i].categoria.id_categoria==2)) {
                 // Estructura
                 const miNodo = document.createElement('div');
                 miNodo.classList.add('card', 'col-sm-12');
@@ -343,7 +372,7 @@ function renderizarCarrito() {
     // Generamos los Nodos a partir de carrito
     carritoSinDuplicados.forEach((item) => {
         // Obtenemos el item que necesitamos de la variable base de datos
-        const miItem = baseDeDatos.filter((itemBaseDatos) => {
+        const miItem = filtro.filter((itemBaseDatos) => {
             // ¿Coincide las id? Solo puede existir un caso
             return itemBaseDatos.id_producto === parseInt(item);
         });
