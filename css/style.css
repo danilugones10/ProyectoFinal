@@ -505,15 +505,12 @@ td {
 }
 
 #busqueda {
+  display: flex;
   margin: 5px;
 }
 
 #nombre {
-  margin-left: 5px;
-}
-
-.buscador {
-  margin: 5px;
+  margin-right: 5px;
 }
 
 #cajilla {

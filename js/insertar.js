@@ -31,7 +31,9 @@ else{
 
 function filtrando() {
     for (let i = 0; i < filtro.length; i++) {
-        if(filtro[i].nombre_producto.includes(nombre.value)){
+        var name=nombre.value.toUpperCase();
+        console.log(name)
+        if(filtro[i].nombre_producto.includes(name)){
             baseDeDatos.push(filtro[i])
         }
     } 
@@ -422,7 +424,6 @@ function borrarItemCarrito(evento) {
     if(store[usu].length===2){
         continuar.style.display="none";
     }
-
 }
 
 // Calcula el precio total teniendo en cuenta los productos repetidos
@@ -471,6 +472,8 @@ function cargarCarritoDeLocalStorage() {
 continuar.addEventListener('click', ()=>{
     const alert=document.querySelector('.alert-success');
     const car=document.querySelector('.containerCarrito');
+    const tot=document.getElementById('tot');
+    tot.textContent="Pedido realizado por valor de: "+total+"€";
     alert.style.display="block";
     car.style.display="none";
     store.setItem(getCookie('usuario'), JSON.stringify(vacio));
