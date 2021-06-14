@@ -1,5 +1,6 @@
 const header=document.getElementById('head');
 const usuario=document.getElementById('usuario');
+const volver=document.getElementById('volver');
 
 function getCookie(cname) {
     let decodedCookie = decodeURIComponent(document.cookie);
@@ -29,6 +30,7 @@ function getCookie(cname) {
     // si no la encuentro devuelvo una cadana vacía
     return "";
 }
+
 
 // Saca un h1 con el nombre del usuario que esta activo
 function change() {

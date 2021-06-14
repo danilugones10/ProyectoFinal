@@ -452,10 +452,13 @@ function vaciarCarrito() {
     calcularTotal();
     // Borra LocalStorage
 }
-
+if(store.length===0){
+    continuar.style.display="none";
+}
 if(store[usu].length===2){
     continuar.style.display="none";
 }
+
 
 function guardarCarritoEnLocalStorage() {
     miLocalStorage.setItem(getCookie('usuario'), JSON.stringify(carrito));
